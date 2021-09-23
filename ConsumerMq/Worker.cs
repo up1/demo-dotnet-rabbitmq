@@ -38,7 +38,7 @@ namespace ConsumerMq
             _channel.ExchangeDeclare("demo", ExchangeType.Topic);
             _channel.QueueDeclare(QueueName, durable: true, exclusive: false, autoDelete: false);
             _channel.QueueBind(QueueName, "demo", "my-key");
-            //_channel.BasicQos(0, 1, false);
+            _channel.BasicQos(0, 1, false);
             _logger.LogInformation($"Queue [{QueueName}] is waiting for messages.");
 
             return base.StartAsync(cancellationToken);

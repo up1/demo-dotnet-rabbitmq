@@ -2,6 +2,7 @@ version: "3"
 services:
   consumer:
     build: ./ConsumerMq
+    image: somkiat/consumer
     environment:
       - RABBIT_HOSTNAME=rabbitmq
 
